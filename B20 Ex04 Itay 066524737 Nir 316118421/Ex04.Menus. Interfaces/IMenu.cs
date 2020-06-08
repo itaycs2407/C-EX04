@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Ex04.Menus.Interfaces
 {
-    public class Class1
+    interface IMenu
     {
+        void Exit();
+
+        void InvokeMenuItem();
+
+        void InvokeFinalMethod(int i_MenuItemNumber);
+
     }
 }
