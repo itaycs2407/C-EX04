@@ -60,10 +60,6 @@ namespace Ex04.Menus.Interfaces
             throw new NotImplementedException();
         }
 
-        public void InvokeFinalMethod(int i_MenuItemNumber)
-        {
-            throw new NotImplementedException();
-        }
     }
 
 

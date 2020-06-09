@@ -10,9 +10,8 @@ namespace Ex04.Menus.Interfaces
     {
         void Exit();
 
-        void InvokeMenuItem();
-
-        void InvokeFinalMethod(int i_MenuItemNumber);
-
+        void InvokeMenuItem(string i_Method);
+        
+       
     }
 }
