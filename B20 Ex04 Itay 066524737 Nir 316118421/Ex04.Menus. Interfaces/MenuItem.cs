@@ -1,36 +1,65 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ex04.Menus.Interfaces
 {
-    class MenuItem :IMenu
+    public class MenuItem
     {
+        private string m_Header;
         private string m_Title;
-        private int m_MenuLevel;
-        private List<MenuItem> m_BelowMenu; 
+        private IMenu methodToInvoke = null;
+        private List<MenuItem> items = new List<MenuItem>();
+        private MenuItem prevMenu;
 
-        public MenuItem(string i_MenuItem, int i_NumberOfSubMenus , int i_Level)
-        {
-            Title = i_MenuItem;
-            m_BelowMenu = new List<MenuItem>(i_NumberOfSubMenus);
-            m_MenuLevel = i_Level;
-        }
-
+        public string Header { get => m_Header; set => m_Header = value; }
         public string Title { get => m_Title; set => m_Title = value; }
-        public int MenuLevel { get => m_MenuLevel; set => m_MenuLevel = value; }
-        internal List<MenuItem> BelowMenu { get => m_BelowMenu; set => m_BelowMenu = value; }
+        public IMenu MethodToInvoke { get => methodToInvoke; set => methodToInvoke = value; }
+        public List<MenuItem> Items { get => items; set => items = value; }
+        public MenuItem PrevMenu { get => prevMenu; set => prevMenu = value; }
 
-        public void Exit()
+        public MenuItem(string i_Header, string i_Title)
         {
-            throw new NotImplementedException();
+            Header = i_Header;
+            Title = i_Title;
         }
 
-        public void InvokeMenuItem()
+        private void printMenu()
         {
-            throw new NotImplementedException();
+            Console.Clear();
+            string back = this.PrevMenu == null ? "Exit" : "Back";
+            Console.WriteLine(Header);
+            Console.WriteLine("-----------------");
+            Console.WriteLine(@"0. {0}", back);
+            int index = 1;
+            Items.ForEach(item =>
+            {
+                Console.WriteLine(@"{0}. {1}",index++,item.Title);
+            });
+            Console.Write("Enter your choise : ");
+            string userSelectionSTR = Console.ReadLine();
+            int userSelection;     
+            while (int.TryParse(userSelectionSTR, out userSelection) && userSelection < 0 || userSelection >= index)
+            {
+                Console.Write("Wrong Choise. Enter your choise : ");
+                userSelectionSTR = Console.ReadLine();
+            }
+            
+            if (userSelection == 0)
+            {
+                this.PrevMenu.printMenu();
+            }
+            else
+            {
+                if (this.Items.Count == 0 && this.methodToInvoke != null)
+                {
+                    this.methodToInvoke.Run();
+                }
+                else
+                {
+                    this.Items[userSelection - 1].printMenu();
+                }
+            }
+            
         }
     }
 }
