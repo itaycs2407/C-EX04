@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Ex04.Menus.Delegates
 {
     public delegate void ActionClickedDelegate();
-    class MenuItem
+     public class MenuItem
     {
         #region Fields
         private string m_Title;
@@ -19,8 +19,8 @@ namespace Ex04.Menus.Delegates
         
         #region Getters+Setters
         public string Title { get => m_Title; set => m_Title = value; }
-        internal List<MenuItem> ChildMenus { get => m_ChildMenus; set => m_ChildMenus = value; }
-        internal MenuItem PrevMenu { get => m_PrevMenu; set => m_PrevMenu = value; }
+        public List<MenuItem> ChildMenus { get => m_ChildMenus;}
+        protected MenuItem PrevMenu { get => m_PrevMenu; set => m_PrevMenu = value; }
         public string MessageToShow { get => m_MessageToShow; set => m_MessageToShow = value; }
         #endregion Getters+Setters
 
@@ -35,16 +35,18 @@ namespace Ex04.Menus.Delegates
         #region Public Methods
         public virtual void OnMenuStartUp()
         {
+            //Do we need to use guys dll?
+            Console.Clear();
             int index = 1;
+            Console.WriteLine(m_MessageToShow);
             m_ChildMenus.ForEach(menu =>
             {
                 Console.WriteLine(@"{0}. {1}",index, menu.Title);
                 index++;
             });
             
-            Console.WriteLine(m_MessageToShow);
             int userChoiceInput = getUsersChoice();
-            invokeUsersAction(userChoiceInput - 1);
+            invokeUsersAction(userChoiceInput);
 
         }
         public void InsertChildMenu(MenuItem i_ChildMenuToInsert)
@@ -52,10 +54,16 @@ namespace Ex04.Menus.Delegates
             i_ChildMenuToInsert.PrevMenu = this;
             if (m_ChildMenus == null)
             {
-                m_ChildMenus = new List<MenuItem>();
+                m_ChildMenus = new List<MenuItem>
+                {
+                    i_ChildMenuToInsert
+                };
+            }
+            else
+            {
                 m_ChildMenus.Add(i_ChildMenuToInsert);
             }
-            m_ChildMenus.Add(i_ChildMenuToInsert);
+            
         }
         public void RemoveChildMenu(MenuItem i_ChildMenuToRemove)
         {
@@ -73,11 +81,11 @@ namespace Ex04.Menus.Delegates
         #region Private Methods
         private void invokeUsersAction(int i_UserChoiceInput)
         {
-            if (i_UserChoiceInput < m_ChildMenus.Count && i_UserChoiceInput > 0) // Entered child
+            if (i_UserChoiceInput <= m_ChildMenus.Count && i_UserChoiceInput > 0) // Entered child
             {
-                m_ChildMenus[i_UserChoiceInput].OnMenuStartUp();
+                m_ChildMenus[i_UserChoiceInput - 1].OnMenuStartUp();
             }
-            else //Entered 0
+            else if(m_PrevMenu != null)//Entered 0
             {
                 m_PrevMenu.OnMenuStartUp();
             }

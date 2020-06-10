@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ex04.Menus.Delegates
 {
-    class ActionMenuItem : MenuItem
+    public class ActionMenuItem : MenuItem
     {
         private ActionClickedDelegate m_ActionOnClick;
 
@@ -25,7 +21,9 @@ namespace Ex04.Menus.Delegates
             {
                 Console.WriteLine("No function was added to this option :( ");
             }
-            Console.WriteLine("Press any key to continue...");            
+
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadLine();
             PrevMenu.OnMenuStartUp();
         }
 

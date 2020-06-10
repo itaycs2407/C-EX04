@@ -10,6 +10,8 @@ namespace Ex04.Menus.Test
     {
         static void Main(string[] args)
         {
+            Test t = new Test();
+            t.DelegatesMenu();
         }
     }
 }
