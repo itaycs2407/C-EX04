@@ -2,6 +2,7 @@
 
 namespace Ex04.Menus.Delegates
 {
+    public delegate void ActionClickedDelegate();
     public class ActionMenuItem : MenuItem
     {
         private ActionClickedDelegate m_ActionOnClick;

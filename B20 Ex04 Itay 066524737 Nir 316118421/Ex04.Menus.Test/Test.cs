@@ -13,21 +13,27 @@ namespace Ex04.Menus.Test
     public class Test
     {
         private MenuItem m_DelegateMenuItem;
+        //private MenuItem m_InterfaceeMenuItem;
         public MenuItem DelegateMenuItem { get => m_DelegateMenuItem; set => m_DelegateMenuItem = value; }
 
         public Test()
         {
             m_DelegateMenuItem = new MenuItem("Delegate Based Menu", "Welcome");
+            //m_InterfaceeMenuItem = new InterFaceMenuItem();
         }
-
+        public void InterfaceMenu()
+        {
+            //interface Style
+        }
         public void DelegatesMenu()
         {
             m_DelegateMenuItem.InsertChildMenu(new MenuItem("V&T","Version and Digits"));
             m_DelegateMenuItem.ChildMenus.FirstOrDefault().InsertChildMenu(new ActionMenuItem("Count Capitals","Count Capitals",printCountCapital));
-            m_DelegateMenuItem.ChildMenus.FirstOrDefault().InsertChildMenu(new ActionMenuItem("Show Version", "Show Version", printVersion));
+            m_DelegateMenuItem.ChildMenus.First().InsertChildMenu(new ActionMenuItem("Show Version", "Show Version", new ActionClickedDelegate(printVersion)));
             m_DelegateMenuItem.InsertChildMenu(new MenuItem("Show D&T", "Show Date/ Time"));
             m_DelegateMenuItem.ChildMenus.LastOrDefault().InsertChildMenu(new ActionMenuItem("Show Time", "Show Time", printTime));
             m_DelegateMenuItem.ChildMenus.LastOrDefault().InsertChildMenu(new ActionMenuItem("Show Date", "Show Date", printDate));
+
             m_DelegateMenuItem.OnMenuStartUp();
         }
         private void printDate()
