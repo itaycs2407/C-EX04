@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace Ex04.Menus.Interfaces
 {
-    interface IMenu
+    public interface IMenu
     {
-        void Exit();
-
-        void InvokeMenuItem(string i_Method);
-        
-       
+        void Run();
     }
 }
