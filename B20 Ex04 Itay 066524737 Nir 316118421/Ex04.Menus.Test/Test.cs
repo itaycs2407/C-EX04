@@ -27,10 +27,33 @@ namespace Ex04.Menus.Test
         }
         public void DelegatesMenu()
         {
+            //Added first child to menu
             m_DelegateMenuItem.InsertChildMenu(new MenuItem("V&T","Version and Digits"));
+
+            //Event += implenatation added here to menu
+            EventMenuItem showCapitalDelegateRunner = new EventMenuItem("Event+= Delegate(C_Capital)");
+            showCapitalDelegateRunner.MenuStartUp += printCountCapital;
+            EventMenuItem showVersionDelegateRunner = new EventMenuItem("Event+= Delegate(Version)");
+            showVersionDelegateRunner.MenuStartUp += printVersion;
+            m_DelegateMenuItem.ChildMenus.FirstOrDefault().InsertChildMenu(showCapitalDelegateRunner);
+            m_DelegateMenuItem.ChildMenus.FirstOrDefault().InsertChildMenu(showVersionDelegateRunner);
+
+            //Event by delegate function added here to menu
             m_DelegateMenuItem.ChildMenus.FirstOrDefault().InsertChildMenu(new ActionMenuItem("Count Capitals","Count Capitals",printCountCapital));
             m_DelegateMenuItem.ChildMenus.First().InsertChildMenu(new ActionMenuItem("Show Version", "Show Version", new ActionClickedDelegate(printVersion)));
+
+            //Added 2nd child to main menu
             m_DelegateMenuItem.InsertChildMenu(new MenuItem("Show D&T", "Show Date/ Time"));
+
+            //Event += implenatation added here to menu
+            EventMenuItem showTimeDelegateRunner = new EventMenuItem("Event+= Delegate(Time)");
+            showTimeDelegateRunner.MenuStartUp += printTime;
+            EventMenuItem showDateDelegateRunner = new EventMenuItem("Event+= Delegate(Date)");
+            showDateDelegateRunner.MenuStartUp += printDate;
+            m_DelegateMenuItem.ChildMenus.LastOrDefault().InsertChildMenu(showTimeDelegateRunner);
+            m_DelegateMenuItem.ChildMenus.LastOrDefault().InsertChildMenu(showDateDelegateRunner);
+
+            //Event by delegate function added here to menu
             m_DelegateMenuItem.ChildMenus.LastOrDefault().InsertChildMenu(new ActionMenuItem("Show Time", "Show Time", printTime));
             m_DelegateMenuItem.ChildMenus.LastOrDefault().InsertChildMenu(new ActionMenuItem("Show Date", "Show Date", printDate));
 
