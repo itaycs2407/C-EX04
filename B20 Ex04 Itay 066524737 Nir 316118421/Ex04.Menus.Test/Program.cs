@@ -13,10 +13,10 @@ namespace Ex04.Menus.Test
         static void Main(string[] args)
         {
 
-            Test t = new Test();
+           // Test t = new Test();
             //t.InterfaceMenu();
             //Console.WriteLine("Press any key to move to delegate menu");
-            t.DelegatesMenu();
+           // t.DelegatesMenu();
 
             TestRun t = new TestRun();
             t.RunMe();

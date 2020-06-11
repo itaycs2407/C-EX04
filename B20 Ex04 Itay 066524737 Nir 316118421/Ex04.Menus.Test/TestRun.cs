@@ -18,7 +18,7 @@ namespace Ex04.Menus.Test
             m_MainMenuInterface.Items[0].PrevMenu = m_MainMenuInterface; 
             m_MainMenuInterface.Items[0].Items.Add(new MenuItem("vs","Version"));
             //var a = new ShoDate90;
-            m_MainMenuInterface.Items[0].Items[0].MethodToInvoke = a.Run();
+            m_MainMenuInterface.Items[0].Items[0].MethodToInvoke = new ShowDate();
             m_MainMenuInterface.Items[0].Items[0].MethodToInvoke = new ShowVersion();
             m_MainMenuInterface.Items[0].Items[0].PrevMenu = m_MainMenuInterface.Items[0];
             m_MainMenuInterface.Items[0].Items.Add(new MenuItem("cc", "Count capital letters"));
