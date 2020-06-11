@@ -12,13 +12,16 @@ namespace Ex04.Menus.Test
 
     public class Test
     {
-        private MenuItem m_DelegateMenuItem;
+        private Ex04.Menus.Delegates.MainMenu m_MenuDelegates;
+
         //private MenuItem m_InterfaceeMenuItem;
-        public MenuItem DelegateMenuItem { get => m_DelegateMenuItem; set => m_DelegateMenuItem = value; }
+        public MainMenu MainMenu { get => m_MenuDelegates; set => m_MenuDelegates = value; }
 
         public Test()
         {
-            m_DelegateMenuItem = new MenuItem("Delegate Based Menu", "Welcome");
+            MenuItem delegateMenuItem = new MenuItem("Delegate Based Menu", "Welcome");
+            m_MenuDelegates = new MainMenu(delegateMenuItem);
+            
             //m_InterfaceeMenuItem = new InterFaceMenuItem();
         }
         public void InterfaceMenu()
@@ -28,36 +31,28 @@ namespace Ex04.Menus.Test
         public void DelegatesMenu()
         {
             //Added first child to menu
-            m_DelegateMenuItem.InsertChildMenu(new MenuItem("V&T","Version and Digits"));
+            m_MenuDelegates.MenuItem.InsertChildMenu(new MenuItem("V&T","Version and Digits"));
 
             //Event += implenatation added here to menu
             EventMenuItem showCapitalDelegateRunner = new EventMenuItem("Event+= Delegate(C_Capital)");
             showCapitalDelegateRunner.MenuStartUp += printCountCapital;
             EventMenuItem showVersionDelegateRunner = new EventMenuItem("Event+= Delegate(Version)");
             showVersionDelegateRunner.MenuStartUp += printVersion;
-            m_DelegateMenuItem.ChildMenus.FirstOrDefault().InsertChildMenu(showCapitalDelegateRunner);
-            m_DelegateMenuItem.ChildMenus.FirstOrDefault().InsertChildMenu(showVersionDelegateRunner);
-
-            //Event by delegate function added here to menu
-            m_DelegateMenuItem.ChildMenus.FirstOrDefault().InsertChildMenu(new ActionMenuItem("Count Capitals","Count Capitals",printCountCapital));
-            m_DelegateMenuItem.ChildMenus.First().InsertChildMenu(new ActionMenuItem("Show Version", "Show Version", new ActionClickedDelegate(printVersion)));
+            m_MenuDelegates.MenuItem.ChildMenus.FirstOrDefault().InsertChildMenu(showCapitalDelegateRunner);
+            m_MenuDelegates.MenuItem.ChildMenus.FirstOrDefault().InsertChildMenu(showVersionDelegateRunner);
 
             //Added 2nd child to main menu
-            m_DelegateMenuItem.InsertChildMenu(new MenuItem("Show D&T", "Show Date/ Time"));
+            m_MenuDelegates.MenuItem.InsertChildMenu(new MenuItem("Show D&T", "Show Date/ Time"));
 
             //Event += implenatation added here to menu
             EventMenuItem showTimeDelegateRunner = new EventMenuItem("Event+= Delegate(Time)");
             showTimeDelegateRunner.MenuStartUp += printTime;
             EventMenuItem showDateDelegateRunner = new EventMenuItem("Event+= Delegate(Date)");
             showDateDelegateRunner.MenuStartUp += printDate;
-            m_DelegateMenuItem.ChildMenus.LastOrDefault().InsertChildMenu(showTimeDelegateRunner);
-            m_DelegateMenuItem.ChildMenus.LastOrDefault().InsertChildMenu(showDateDelegateRunner);
+            m_MenuDelegates.MenuItem.ChildMenus.LastOrDefault().InsertChildMenu(showTimeDelegateRunner);
+            m_MenuDelegates.MenuItem.ChildMenus.LastOrDefault().InsertChildMenu(showDateDelegateRunner);
 
-            //Event by delegate function added here to menu
-            m_DelegateMenuItem.ChildMenus.LastOrDefault().InsertChildMenu(new ActionMenuItem("Show Time", "Show Time", printTime));
-            m_DelegateMenuItem.ChildMenus.LastOrDefault().InsertChildMenu(new ActionMenuItem("Show Date", "Show Date", printDate));
-
-            m_DelegateMenuItem.OnMenuStartUp();
+            m_MenuDelegates.Show();
         }
         private void printDate()
         {
