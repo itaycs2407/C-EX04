@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Ex04.Menus.Interfaces
 {
-    public class Class1
+    public interface IMenu
     {
+        void Run();
     }
 }

@@ -1,6 +1,0 @@
-C:\code\C#\C-EX04\B20 Ex04 Itay 066524737 Nir 316118421\Ex04.Menus. Interfaces\bin\Debug\Ex04.Menus.Interfaces.dll
-C:\code\C#\C-EX04\B20 Ex04 Itay 066524737 Nir 316118421\Ex04.Menus. Interfaces\bin\Debug\Ex04.Menus.Interfaces.pdb
-C:\code\C#\C-EX04\B20 Ex04 Itay 066524737 Nir 316118421\Ex04.Menus. Interfaces\obj\Debug\Ex04.Menus. Interfaces.csprojResolveAssemblyReference.cache
-C:\code\C#\C-EX04\B20 Ex04 Itay 066524737 Nir 316118421\Ex04.Menus. Interfaces\obj\Debug\Ex04.Menus. Interfaces.csproj.CoreCompileInputs.cache
-C:\code\C#\C-EX04\B20 Ex04 Itay 066524737 Nir 316118421\Ex04.Menus. Interfaces\obj\Debug\Ex04.Menus.Interfaces.dll
-C:\code\C#\C-EX04\B20 Ex04 Itay 066524737 Nir 316118421\Ex04.Menus. Interfaces\obj\Debug\Ex04.Menus.Interfaces.pdb

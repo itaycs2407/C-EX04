@@ -42,14 +42,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CountCapital.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="Test.cs" />
+=======
+    <Compile Include="ShowDate.cs" />
+    <Compile Include="ShowTime.cs" />
+    <Compile Include="ShowVersion.cs" />
+    <Compile Include="TestRun.cs" />
+>>>>>>> module/Interface
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+=======
+    <ProjectReference Include="..\Ex04.Menus. Interfaces\Ex04.Menus. Interfaces.csproj">
+      <Project>{7482dcc0-2731-4c46-8c42-41f2ebdc35dd}</Project>
+      <Name>Ex04.Menus. Interfaces</Name>
+    </ProjectReference>
+>>>>>>> module/Interface
     <ProjectReference Include="..\Ex04.Menus.Delegates\Ex04.Menus.Delegates.csproj">
       <Project>{cf2c2da7-595b-40a2-a935-9e06a9d24201}</Project>
       <Name>Ex04.Menus.Delegates</Name>
