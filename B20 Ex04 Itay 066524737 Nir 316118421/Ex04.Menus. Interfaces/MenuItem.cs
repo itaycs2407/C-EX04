@@ -23,43 +23,60 @@ namespace Ex04.Menus.Interfaces
             Title = i_Title;
         }
 
-        private void printMenu()
+        public void Show()
         {
-            Console.Clear();
-            string back = this.PrevMenu == null ? "Exit" : "Back";
-            Console.WriteLine(Header);
-            Console.WriteLine("-----------------");
-            Console.WriteLine(@"0. {0}", back);
-            int index = 1;
-            Items.ForEach(item =>
+            if (this.MethodToInvoke != null)
             {
-                Console.WriteLine(@"{0}. {1}",index++,item.Title);
-            });
-            Console.Write("Enter your choise : ");
-            string userSelectionSTR = Console.ReadLine();
-            int userSelection;     
-            while (int.TryParse(userSelectionSTR, out userSelection) && userSelection < 0 || userSelection >= index)
-            {
-                Console.Write("Wrong Choise. Enter your choise : ");
-                userSelectionSTR = Console.ReadLine();
-            }
-            
-            if (userSelection == 0)
-            {
-                this.PrevMenu.printMenu();
+                this.methodToInvoke.Run();
+                Console.ReadLine();
             }
             else
             {
-                if (this.Items.Count == 0 && this.methodToInvoke != null)
+
+                Console.Clear();
+                string back = this.PrevMenu == null ? "Exit" : "Back";
+                Console.WriteLine(this.Header);
+                Console.WriteLine("-----------------");
+                Console.WriteLine(@"0. {0}", back);
+                int index = 1;
+                Items.ForEach(item =>
                 {
-                    this.methodToInvoke.Run();
+                    Console.WriteLine(@"{0}. {1}",index++,item.Title);
+                });
+                Console.Write("Enter your choise : ");
+                string userSelectionSTR = Console.ReadLine();
+                int userSelection;     
+                while (int.TryParse(userSelectionSTR, out userSelection) && userSelection < 0 || userSelection >= index)
+                {
+                    Console.Write("Wrong Choise. Enter your choise : ");
+                    userSelectionSTR = Console.ReadLine();
+                }
+                
+                if (userSelection == 0)
+                {
+                    goBack();
                 }
                 else
                 {
-                    this.Items[userSelection - 1].printMenu();
+                    if (this.Items.Count == 0 && this.methodToInvoke != null)
+                    {
+                        this.methodToInvoke.Run();
+                    }
+                    else
+                    {
+                        this.Items[userSelection - 1].Show();
+                    }
                 }
+                goBack();
             }
             
         }
+    private void goBack()
+    {
+        if (this.prevMenu != null)
+        {
+            this.PrevMenu.Show();
+        }
+    }
     }
 }

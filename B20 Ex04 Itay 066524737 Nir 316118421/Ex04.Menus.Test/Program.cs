@@ -12,7 +12,12 @@ namespace Ex04.Menus.Test
     {
         static void Main(string[] args)
         {
+           
             
+            
+            
+            TestRun t = new TestRun();
+            t.RunMe();
         }
 
     }

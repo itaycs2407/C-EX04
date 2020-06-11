@@ -1,0 +1,6 @@
+C:\Users\Itay Cohen\Desktop\לימודים\שנה ג\סמסטר ב\C#\DN_HIT_2020B_Ex04\B20 Ex04 Itay 066524737 Nir 316118421\Ex04.Menus. Interfaces\bin\Debug\Ex04.Menus.Interfaces.dll
+C:\Users\Itay Cohen\Desktop\לימודים\שנה ג\סמסטר ב\C#\DN_HIT_2020B_Ex04\B20 Ex04 Itay 066524737 Nir 316118421\Ex04.Menus. Interfaces\bin\Debug\Ex04.Menus.Interfaces.pdb
+C:\Users\Itay Cohen\Desktop\לימודים\שנה ג\סמסטר ב\C#\DN_HIT_2020B_Ex04\B20 Ex04 Itay 066524737 Nir 316118421\Ex04.Menus. Interfaces\obj\Debug\Ex04.Menus. Interfaces.csprojAssemblyReference.cache
+C:\Users\Itay Cohen\Desktop\לימודים\שנה ג\סמסטר ב\C#\DN_HIT_2020B_Ex04\B20 Ex04 Itay 066524737 Nir 316118421\Ex04.Menus. Interfaces\obj\Debug\Ex04.Menus. Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\Itay Cohen\Desktop\לימודים\שנה ג\סמסטר ב\C#\DN_HIT_2020B_Ex04\B20 Ex04 Itay 066524737 Nir 316118421\Ex04.Menus. Interfaces\obj\Debug\Ex04.Menus.Interfaces.dll
+C:\Users\Itay Cohen\Desktop\לימודים\שנה ג\סמסטר ב\C#\DN_HIT_2020B_Ex04\B20 Ex04 Itay 066524737 Nir 316118421\Ex04.Menus. Interfaces\obj\Debug\Ex04.Menus.Interfaces.pdb
