@@ -22,9 +22,9 @@ namespace Ex04.Menus.Interfaces
 
         public void Show()
         {
-            if (this.MethodToInvoke != null)
+            if (MethodToInvoke != null)
             {
-                this.methodToInvoke.Run();
+                methodToInvoke.Run();
                 Console.ReadLine();
                 goBack();
 
@@ -33,7 +33,7 @@ namespace Ex04.Menus.Interfaces
             {
 
                 Console.Clear();
-                string back = this.PrevMenu == null ? "Exit" : "Back";
+                string back = PrevMenu == null ? "Exit" : "Back";
                 Console.WriteLine(Title);
                 Console.WriteLine("-----------------");
                 Console.WriteLine(@"0. {0}", back);
@@ -57,13 +57,13 @@ namespace Ex04.Menus.Interfaces
                 }
                 else
                 {
-                    if (this.Items.Count == 0 && this.methodToInvoke != null)
+                    if (Items.Count == 0 && methodToInvoke != null)
                     {
-                        this.methodToInvoke.Run();
+                        methodToInvoke.Run();
                     }
                     else
                     {
-                        this.Items[userSelection - 1].Show();
+                        Items[userSelection - 1].Show();
                     }
                 }
                
@@ -72,9 +72,9 @@ namespace Ex04.Menus.Interfaces
         }
         private void goBack()
         {
-            if (this.prevMenu != null)
+            if (prevMenu != null)
             {
-                this.PrevMenu.Show();
+                PrevMenu.Show();
             }
             
         }
