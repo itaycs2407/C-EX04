@@ -26,6 +26,8 @@ namespace Ex04.Menus.Interfaces
             {
                 this.methodToInvoke.Run();
                 Console.ReadLine();
+                goBack();
+
             }
             else
             {
@@ -64,16 +66,17 @@ namespace Ex04.Menus.Interfaces
                         this.Items[userSelection - 1].Show();
                     }
                 }
-                goBack();
+               
             }
             
         }
-    private void goBack()
-    {
-        if (this.prevMenu != null)
+        private void goBack()
         {
-            this.PrevMenu.Show();
+            if (this.prevMenu != null)
+            {
+                this.PrevMenu.Show();
+            }
+            
         }
-    }
     }
 }
