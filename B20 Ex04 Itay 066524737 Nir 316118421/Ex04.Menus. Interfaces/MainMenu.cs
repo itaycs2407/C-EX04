@@ -11,11 +11,11 @@ namespace Ex04.Menus.Interfaces
         MenuItem m_MenuItem;
 
         public MenuItem MenuItem { get => m_MenuItem; set => m_MenuItem = value; }
-        public MainMenu()
+        public MainMenu(MenuItem i_MenuItem)
         {
-           
+            m_MenuItem = i_MenuItem; 
         }
-        private void Show()
+        public void Show()
         {
             m_MenuItem.Show();
         }
