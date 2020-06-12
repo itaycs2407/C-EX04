@@ -7,7 +7,7 @@ namespace Ex04.Menus.Delegates
      public class MenuItem
     {
         #region Fields
-        private const int m_ExitIndex = 0;
+        private const int k_ExitIndex = 0;
         private string m_Title;
         private List<MenuItem> m_ChildMenus;
         private MenuItem m_PrevMenu;
@@ -35,8 +35,8 @@ namespace Ex04.Menus.Delegates
             Console.Clear();
             int index = 1;
             Console.WriteLine(Title);
-            string backString = m_PrevMenu == null ? "Exit" : "Back";
-            Console.WriteLine("{0}. {1}", m_ExitIndex, backString);
+            string returnToPrevMenuString = m_PrevMenu == null ? "Exit" : "Back";
+            Console.WriteLine("{0}. {1}", k_ExitIndex, returnToPrevMenuString);
             m_ChildMenus.ForEach(menu =>
             {
                 Console.WriteLine(@"{0}. {1}", index, menu.Title);
@@ -82,12 +82,12 @@ namespace Ex04.Menus.Delegates
             
             string userInput = Console.ReadLine();
             int userIntUnput;
-            bool isValidInput = int.TryParse(userInput, out userIntUnput);
-            while (!isValidInput || userIntUnput < 0 || userIntUnput > m_ChildMenus.Count)
+            bool v_IsValidInput = int.TryParse(userInput, out userIntUnput);
+            while (!v_IsValidInput || userIntUnput < 0 || userIntUnput > m_ChildMenus.Count)
             {
-                Console.WriteLine("Invalid input, Please type a number of your choice between 0 and {0} (Or {1} to exit this menu): ", m_ChildMenus.Count, m_ExitIndex);
+                Console.WriteLine("Invalid input, Please type a number of your choice between 0 and {0} : ", m_ChildMenus.Count);
                 userInput = Console.ReadLine();
-                isValidInput = int.TryParse(userInput, out userIntUnput);
+                v_IsValidInput = int.TryParse(userInput, out userIntUnput);
             }
 
             return userIntUnput;

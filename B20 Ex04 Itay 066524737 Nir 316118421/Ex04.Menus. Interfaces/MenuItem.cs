@@ -34,10 +34,10 @@ namespace Ex04.Menus.Interfaces
             else
             {
                 Console.Clear();
-                string back = PrevMenu == null ? "Exit" : "Back";
+                string returnToPrevMenuString = PrevMenu == null ? "Exit" : "Back";
                 Console.WriteLine(Title);
                 Console.WriteLine("-----------------");
-                Console.WriteLine(@"0. {0}", back);
+                Console.WriteLine(@"0. {0}", returnToPrevMenuString);
                 int index = 1;
                 Items.ForEach(item =>
                 {
