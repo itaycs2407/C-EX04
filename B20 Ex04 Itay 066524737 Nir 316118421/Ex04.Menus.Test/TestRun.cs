@@ -25,7 +25,7 @@
             m_CountCapitals = new CountCapital();
         }   
 
-        public void RunInterface()
+        private void runInterface()
         {
             m_MainMenuInterface = new Interfaces.MainMenu(new Interfaces.MenuItem("Interface Menu"));
 
@@ -51,7 +51,7 @@
             m_MainMenuInterface.Show();
         }
 
-        public void RunDelegate()
+        private void runDelegate()
         {
             m_MainMenuDelegates = new Delegates.MainMenu(new Delegates.MenuItem("Delegates Menu"));
             
@@ -77,8 +77,8 @@
 
         public void RunMe()
         {
-            RunInterface();
-            RunDelegate();
+            runInterface();
+            runDelegate();
         }
     }
 }
