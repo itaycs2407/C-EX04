@@ -10,7 +10,7 @@ namespace Ex04.Menus.Delegates
     {
         public event Action MenuStartUp;
 
-        public EventMenuItem(string i_Title) : base(i_Title, "")
+        public EventMenuItem(string i_Title) : base(i_Title)
         {
         }
 

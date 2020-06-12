@@ -18,5 +18,6 @@ namespace Ex04.Menus.Delegates
         {
             m_MenuItem.OnMenuStartUp();
         }
+      
     }
 }

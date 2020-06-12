@@ -13,7 +13,6 @@ namespace Ex04.Menus.Delegates
         private string m_Title;
         private List<MenuItem> m_ChildMenus;
         private MenuItem m_PrevMenu;
-        private string m_MenuDescription;
         private const int m_ExitIndex = 0;
         #endregion Fields
         
@@ -21,14 +20,12 @@ namespace Ex04.Menus.Delegates
         public string Title { get => m_Title; set => m_Title = value; }
         public List<MenuItem> ChildMenus { get => m_ChildMenus;}
         protected MenuItem PrevMenu { get => m_PrevMenu; set => m_PrevMenu = value; }
-        public string MessageToShow { get => m_MenuDescription; set => m_MenuDescription = value; }
         #endregion Getters+Setters
 
         #region C'tors
-        public MenuItem(string i_Title, string i_MessageToShow)
+        public MenuItem(string i_Title)
         {
             m_Title = i_Title;
-            m_MenuDescription = i_MessageToShow;
         }
         #endregion C'tors
 
@@ -38,7 +35,7 @@ namespace Ex04.Menus.Delegates
             //Do we need to use guys dll?
             Console.Clear();
             int index = 1;
-            Console.WriteLine(m_MenuDescription);
+            Console.WriteLine(Title);
             string backString = m_PrevMenu == null ? "Exit" : "Back";
             Console.WriteLine("{0}. {1}",m_ExitIndex, backString);
             m_ChildMenus.ForEach(menu =>

@@ -10,3 +10,14 @@ C:\Users\Itay Cohen\Desktop\לימודים\שנה ג\סמסטר ב\C#\DN_HIT_202
 C:\Users\Itay Cohen\Desktop\לימודים\שנה ג\סמסטר ב\C#\DN_HIT_2020B_Ex04\B20 Ex04 Itay 066524737 Nir 316118421\Ex04.Menus.Test\obj\Debug\Ex04.Menus.Test.csproj.CopyComplete
 C:\Users\Itay Cohen\Desktop\לימודים\שנה ג\סמסטר ב\C#\DN_HIT_2020B_Ex04\B20 Ex04 Itay 066524737 Nir 316118421\Ex04.Menus.Test\obj\Debug\Ex04.Menus.Test.exe
 C:\Users\Itay Cohen\Desktop\לימודים\שנה ג\סמסטר ב\C#\DN_HIT_2020B_Ex04\B20 Ex04 Itay 066524737 Nir 316118421\Ex04.Menus.Test\obj\Debug\Ex04.Menus.Test.pdb
+C:\code\C#\C-EX04\B20 Ex04 Itay 066524737 Nir 316118421\Ex04.Menus.Test\bin\Debug\Ex04.Menus.Test.exe.config
+C:\code\C#\C-EX04\B20 Ex04 Itay 066524737 Nir 316118421\Ex04.Menus.Test\bin\Debug\Ex04.Menus.Test.exe
+C:\code\C#\C-EX04\B20 Ex04 Itay 066524737 Nir 316118421\Ex04.Menus.Test\bin\Debug\Ex04.Menus.Test.pdb
+C:\code\C#\C-EX04\B20 Ex04 Itay 066524737 Nir 316118421\Ex04.Menus.Test\bin\Debug\Ex04.Menus.Delegates.dll
+C:\code\C#\C-EX04\B20 Ex04 Itay 066524737 Nir 316118421\Ex04.Menus.Test\bin\Debug\Ex04.Menus.Interfaces.dll
+C:\code\C#\C-EX04\B20 Ex04 Itay 066524737 Nir 316118421\Ex04.Menus.Test\bin\Debug\Ex04.Menus.Interfaces.pdb
+C:\code\C#\C-EX04\B20 Ex04 Itay 066524737 Nir 316118421\Ex04.Menus.Test\bin\Debug\Ex04.Menus.Delegates.pdb
+C:\code\C#\C-EX04\B20 Ex04 Itay 066524737 Nir 316118421\Ex04.Menus.Test\obj\Debug\Ex04.Menus.Test.csprojResolveAssemblyReference.cache
+C:\code\C#\C-EX04\B20 Ex04 Itay 066524737 Nir 316118421\Ex04.Menus.Test\obj\Debug\Ex04.Menus.Test.csproj.CoreCompileInputs.cache
+C:\code\C#\C-EX04\B20 Ex04 Itay 066524737 Nir 316118421\Ex04.Menus.Test\obj\Debug\Ex04.Menus.Test.exe
+C:\code\C#\C-EX04\B20 Ex04 Itay 066524737 Nir 316118421\Ex04.Menus.Test\obj\Debug\Ex04.Menus.Test.pdb

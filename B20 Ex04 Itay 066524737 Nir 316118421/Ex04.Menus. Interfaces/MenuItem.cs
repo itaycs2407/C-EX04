@@ -5,21 +5,18 @@ namespace Ex04.Menus.Interfaces
 {
     public class MenuItem
     {
-        private string m_Header;
         private string m_Title;
         private IMenu methodToInvoke = null;
         private List<MenuItem> items = new List<MenuItem>();
         private MenuItem prevMenu;
 
-        public string Header { get => m_Header; set => m_Header = value; }
         public string Title { get => m_Title; set => m_Title = value; }
         public IMenu MethodToInvoke { get => methodToInvoke; set => methodToInvoke = value; }
         public List<MenuItem> Items { get => items; set => items = value; }
         public MenuItem PrevMenu { get => prevMenu; set => prevMenu = value; }
 
-        public MenuItem(string i_Header, string i_Title)
+        public MenuItem(string i_Title)
         {
-            Header = i_Header;
             Title = i_Title;
         }
 
@@ -35,7 +32,7 @@ namespace Ex04.Menus.Interfaces
 
                 Console.Clear();
                 string back = this.PrevMenu == null ? "Exit" : "Back";
-                Console.WriteLine(this.Header);
+                Console.WriteLine(Title);
                 Console.WriteLine("-----------------");
                 Console.WriteLine(@"0. {0}", back);
                 int index = 1;
@@ -45,13 +42,13 @@ namespace Ex04.Menus.Interfaces
                 });
                 Console.Write("Enter your choise : ");
                 string userSelectionSTR = Console.ReadLine();
-                int userSelection;     
-                while (int.TryParse(userSelectionSTR, out userSelection) && userSelection < 0 || userSelection >= index)
+                int userSelection;
+                while (!int.TryParse(userSelectionSTR, out userSelection)|| userSelection< 0 || userSelection > Items.Count)
                 {
-                    Console.Write("Wrong Choise. Enter your choise : ");
+                    Console.WriteLine("Invalid input, Please type a number of your choice between 1 and {0} (Or 0 to exit this menu): "
+                        , Items.Count);
                     userSelectionSTR = Console.ReadLine();
                 }
-                
                 if (userSelection == 0)
                 {
                     goBack();
