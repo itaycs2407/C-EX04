@@ -1,5 +1,5 @@
-﻿using Ex04.Menus.Interfaces;
-using System;
+﻿using System;
+using Ex04.Menus.Interfaces;
 
 namespace Ex04.Menus.Test
 {
@@ -9,14 +9,12 @@ namespace Ex04.Menus.Test
         {
             printCurrentTime();
         }
+
         private void printCurrentTime()
         {
-          
-            
             DateTime time = new DateTime();
             time = DateTime.Now;
             Console.WriteLine(@"Current time is : {0}:{1}", time.Hour, time.Minute);
         }
     }
-
 }

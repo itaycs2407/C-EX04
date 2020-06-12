@@ -1,5 +1,5 @@
-﻿using Ex04.Menus.Interfaces;
-using System;
+﻿using System;
+using Ex04.Menus.Interfaces;
 
 namespace Ex04.Menus.Test
 {
@@ -9,6 +9,7 @@ namespace Ex04.Menus.Test
         {
             countCapitalsLetters();
         }
+
         private static void countCapitalsLetters()
         {
             int i, capitalCounter = 0;
@@ -23,6 +24,7 @@ namespace Ex04.Menus.Test
                     capitalCounter++;
                 }
             }
+
             Console.WriteLine(@"There are {0} capital letters in the sentence you entered.", capitalCounter);
         }
     }

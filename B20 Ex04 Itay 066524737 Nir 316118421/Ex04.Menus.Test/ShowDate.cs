@@ -1,10 +1,9 @@
-﻿using Ex04.Menus.Interfaces;
-using System;
+﻿using System;
+using Ex04.Menus.Interfaces;
 
 namespace Ex04.Menus.Test
 {
     public class ShowDate : IMenu
-
     {
         public void Run()
         {
@@ -17,6 +16,5 @@ namespace Ex04.Menus.Test
             time = DateTime.Now;
             Console.WriteLine(@"Current date is : {0}/{1}/{2}", time.Day, time.Month, time.Year);
         }
-
     }
 }

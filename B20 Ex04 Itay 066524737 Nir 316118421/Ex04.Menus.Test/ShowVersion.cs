@@ -1,5 +1,5 @@
-﻿using Ex04.Menus.Interfaces;
-using System;
+﻿using System;
+using Ex04.Menus.Interfaces;
 
 namespace Ex04.Menus.Test
 {
@@ -9,6 +9,7 @@ namespace Ex04.Menus.Test
         {
             printVersion();
         }
+
         private static void printVersion()
         {
             Console.WriteLine("Version: 20.2.4.30620");

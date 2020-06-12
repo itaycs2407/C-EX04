@@ -11,8 +11,11 @@ namespace Ex04.Menus.Interfaces
         private MenuItem prevMenu;
 
         public string Title { get => m_Title; set => m_Title = value; }
+
         public IMenu MethodToInvoke { get => methodToInvoke; set => methodToInvoke = value; }
+
         public List<MenuItem> Items { get => items; set => items = value; }
+
         public MenuItem PrevMenu { get => prevMenu; set => prevMenu = value; }
 
         public MenuItem(string i_Title)
@@ -27,11 +30,9 @@ namespace Ex04.Menus.Interfaces
                 methodToInvoke.Run();
                 Console.ReadLine();
                 goBack();
-
             }
             else
             {
-
                 Console.Clear();
                 string back = PrevMenu == null ? "Exit" : "Back";
                 Console.WriteLine(Title);
@@ -40,17 +41,17 @@ namespace Ex04.Menus.Interfaces
                 int index = 1;
                 Items.ForEach(item =>
                 {
-                    Console.WriteLine(@"{0}. {1}",index++,item.Title);
+                    Console.WriteLine(@"{0}. {1}", index++, item.Title);
                 });
                 Console.Write("Enter your choise : ");
                 string userSelectionSTR = Console.ReadLine();
                 int userSelection;
-                while (!int.TryParse(userSelectionSTR, out userSelection)|| userSelection< 0 || userSelection > Items.Count)
+                while (!int.TryParse(userSelectionSTR, out userSelection) || userSelection < 0 || userSelection > Items.Count)
                 {
-                    Console.WriteLine("Invalid input, Please type a number of your choice between 1 and {0} (Or 0 to exit this menu): "
-                        , Items.Count);
+                    Console.WriteLine("Invalid input, Please type a number of your choice between 1 and {0} (Or 0 to exit this menu): ", Items.Count);
                     userSelectionSTR = Console.ReadLine();
                 }
+
                 if (userSelection == 0)
                 {
                     goBack();
@@ -66,17 +67,15 @@ namespace Ex04.Menus.Interfaces
                         Items[userSelection - 1].Show();
                     }
                 }
-               
             }
-            
         }
+
         private void goBack()
         {
             if (prevMenu != null)
             {
                 PrevMenu.Show();
             }
-            
         }
     }
 }

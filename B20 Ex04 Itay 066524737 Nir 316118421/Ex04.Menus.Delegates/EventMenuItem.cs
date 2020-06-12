@@ -24,7 +24,6 @@ namespace Ex04.Menus.Delegates
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
             PrevMenu.OnMenuStartUp();
-
         }
     }
 }
